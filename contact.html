@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Checkered Pants — Contact Us</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <span class="checker-icon">
+      <span></span><span></span><span></span><span></span>
+    </span>
+    GCP
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">What We Offer</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <header class="page-header">
+    <span class="eyebrow">Get In Touch</span>
+    <h1>Let's talk about<br><em>what you're building</em></h1>
+    <p>Whether you have a project in mind, a problem to solve, or just want to explore whether we're a fit — we'd love to hear from you. Fill out the form and we'll be in touch within three business days.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="contact-grid fade-2">
+
+    <div class="contact-info">
+      <h2>We're based in Utah<br>and work remotely.</h2>
+      <p>We take on a small number of engagements at a time so we can give each client our full attention. If what you're working on sounds like a good fit, let's find out.</p>
+      <div class="contact-detail">
+        <span>🌐</span>
+        <span>greencheckeredpants.com</span>
+      </div>
+
+      <div class="divider" style="max-width: 200px; margin: 2rem 0;"></div>
+
+      <p style="font-size:0.85rem; color: var(--text-lo); line-height: 1.7;">
+        Areas we work in: data warehousing, AI-assisted development, software architecture, Medicare &amp; insurance technology, SAP APMe and related enterprise platforms.
+      </p>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form id="contact-form" action="https://formsubmit.co/contact@greencheckeredpants.com" method="POST">
+
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New GCP Website Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://greencheckeredpants.com/contact.html?sent=1">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="business">Business / Organization</label>
+            <input type="text" id="business" name="business" placeholder="Acme Corp">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@acmecorp.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="(801) 555-0100">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="interest">Area of Interest</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select one…</option>
+            <option value="Data Warehousing &amp; Analytics">Data Warehousing &amp; Analytics</option>
+            <option value="AI-Assisted Development Workflows">AI-Assisted Development Workflows</option>
+            <option value="Software Architecture &amp; Development">Software Architecture &amp; Development</option>
+            <option value="Medicare &amp; Insurance Technology">Medicare &amp; Insurance Technology</option>
+            <option value="SAP APMe &amp; Enterprise Platforms">SAP APMe &amp; Enterprise Platforms</option>
+            <option value="Something Else">Something Else</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="A sentence or two is plenty — what are you trying to solve?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message →</button>
+
+        <div class="privacy-note">
+          <strong>Your privacy is important to us.</strong> The information you share here is used solely to respond to your inquiry. We do not sell, share, or disclose client or prospect information to third parties — ever. Each engagement and conversation is held in strict confidence.
+        </div>
+
+      </form>
+
+      <!-- Success state (shown via JS when ?sent=1 in URL) -->
+      <div class="form-success" id="success-msg">
+        <div class="check">✦</div>
+        <h3>Message sent.</h3>
+        <p>We'll review your note and be in touch within three business days.</p>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Green Checkered Pants LLC &nbsp;·&nbsp; Utah</p>
+</footer>
+
+<script>
+  // Show success message if redirected back with ?sent=1
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    document.getElementById('contact-form').style.display = 'none';
+    const s = document.getElementById('success-msg');
+    s.style.display = 'block';
+    // clean URL without reload
+    history.replaceState({}, '', window.location.pathname);
+  }
+</script>
+
+</body>
+</html>

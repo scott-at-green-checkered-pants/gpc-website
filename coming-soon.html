@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Checkered Pants — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #162b1e;
+  --green-hi:  #52b788;
+  --green-mid: #40916c;
+  --green-lo:  #2d6a4f;
+  --text:      #e0e0e0;
+  --text-mid:  #aaa;
+  --text-lo:   #555;
+  --border:    rgba(255,255,255,0.07);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Checker background */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: repeating-conic-gradient(var(--green-lo) 0% 25%, transparent 0% 50%);
+  background-size: 24px 24px;
+  opacity: 0.05;
+}
+
+/* Soft radial glow behind content */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(82,183,136,0.07) 0%, transparent 70%);
+  z-index: 0; pointer-events: none;
+}
+
+.wrap {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  animation: fadeUp 1s ease both;
+}
+
+/* Logo mark */
+.logo {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; margin-bottom: 2.5rem;
+}
+.checker-icon {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+  width: 22px; height: 22px;
+}
+.checker-icon span { border-radius: 2px; }
+.checker-icon span:nth-child(1),
+.checker-icon span:nth-child(4) { background: var(--green-hi); }
+.checker-icon span:nth-child(2),
+.checker-icon span:nth-child(3) { background: var(--green-lo); }
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green-mid), transparent);
+  width: 200px; margin: 0 auto 2.5rem;
+  opacity: 0.5;
+}
+
+/* Headline */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 900;
+  color: #f0f0f0;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+h1 em {
+  font-style: italic;
+  color: var(--green-hi);
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* Contact nudge */
+.contact-nudge {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-lo);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 24px;
+  padding: 0.6rem 1.4rem;
+}
+.contact-nudge a {
+  color: var(--green-hi);
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-nudge a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+  position: fixed; bottom: 1.5rem; left: 0; right: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-lo);
+  z-index: 1;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="logo">
+    <span class="checker-icon">
+      <span></span><span></span><span></span><span></span>
+    </span>
+    <span class="logo-text">GCP</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <h1>Something<br><em>good</em> is coming.</h1>
+
+  <p class="tagline">
+    Green Checkered Pants is a boutique technology consultancy built on enterprise engineering and deep industry expertise. Our full site is on its way.
+  </p>
+
+  <div class="contact-nudge">
+    In the meantime, reach us at <a href="mailto:contact@greencheckeredpants.com">contact@greencheckeredpants.com</a>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 Green Checkered Pants LLC &nbsp;·&nbsp; Utah
+</footer>
+
+</body>
+</html>

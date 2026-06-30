@@ -185,6 +185,43 @@ nav {
   line-height: 1.7;
 }
 
+/* ---- COMPANY VALUES ---- */
+.values-section {
+  max-width: 860px; margin: 0 auto 3.5rem;
+}
+.values-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem; font-weight: 700;
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.values-list {
+  display: flex; flex-direction: column; gap: 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  transition: border-color 0.3s;
+}
+.values-list:hover { border-color: var(--border-hi); }
+.value-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.value-dot {
+  flex-shrink: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green-hi);
+  margin-top: 0.45rem;
+  opacity: 0.8;
+}
+.value-item p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
 /* ---- FOUNDER CARDS ---- */
 .founder-grid {
   display: flex; flex-wrap: wrap; gap: 2rem;
